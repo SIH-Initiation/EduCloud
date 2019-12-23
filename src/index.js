@@ -13,16 +13,19 @@ let mainWindow;
 const createWindow = () => {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    fullscreen:true,
-    width: 800,
-    height: 600,
+    width: 1200,
+    height: 1000,
+    // frame:false,
+    titleBarStyle:'hidden',
+    transparent: true,
+    resizable:false,
   });
 
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 
   // Emitted when the window is closed.
   mainWindow.on('closed', () => {
