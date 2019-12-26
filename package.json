@@ -10,7 +10,7 @@
     "make": "electron-forge make",
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\"",
-    "watch":"nodemon --exec electron ."
+    "watch": "nodemon --exec electron ."
   },
   "keywords": [],
   "author": {
@@ -46,6 +46,7 @@
     }
   },
   "dependencies": {
+    "electron-json-storage": "^4.1.8",
     "electron-squirrel-startup": "^1.0.0",
     "nodemon": "^2.0.2"
   },
