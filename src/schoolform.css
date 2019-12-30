@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+
+body{
+background-color:black;
+font-family: "Dosis",sans-serif;
+font-weight: 600;
+}
+* {box-sizing: border-box;}
+input[type=date],input[type=number]
+{
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+
+}
+
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+
+}
+
+.container1 {
+  border-radius: 10px;
+  background-color:#c2104b;
+  padding: 20px;
+  width:35%;
+  position:relative;
+  left:32.5%;
+}
+
+h2{
+    text-align: center;
+    font-family: "Dosis",sans-serif;
+    font-size: 30px;
+    margin-bottom:10px;
+    margin-top:1px;
+    color:gainsboro;
+    font-weight: 200;
+
+}
+
+label{
+    color:black;
+
+}
+input[type=submit] {
+
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 17px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: black;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px #999;
+    position: relative;
+    left:40%;
+    font-family: "Dosis",sans-serif;
+  }
+
+  input[type=submit]:hover {background-color: #282d38}
+
+  input[type=submit]:active {
+    background-color: #272b31;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+
+  }
