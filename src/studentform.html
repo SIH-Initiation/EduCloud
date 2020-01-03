@@ -5,11 +5,13 @@
 <link rel="stylesheet" href="studentform.css">
 </head>
 <body>
+  <script type="text/javascript" src="pouchdb-7.1.1.js"></script>
+<script src="JS/student_data.js"></script>
 
 <h2>Enter Student Details:</h2>
 
 <div class="container1">
-  <form action="/action_page.php">
+  <form >
     <label for="admno">Admission Number:</label>
     <input type="text" id="admno" name="admno" placeholder="Enter Student's Admission Number">
 
@@ -25,7 +27,7 @@
     <input type="text" id="rollnumber" name="rollnumber" placeholder="Student's Roll Number">
     <br>
     <label for="dob">Date Of Birth:</label>
-    <input type="date" id="dob" name="dob">
+    <input type="date" id="dob" name="dob" placeholder="dd/mm/yyyy">
     <label for="standard">Standard:</label>
     <select id="standard" name="standard">
       <option value="Nursery">Nursery</option>
@@ -85,10 +87,10 @@
       <label for="doj">Date Of Leaving:</label>
       <input type="date" id="dol" name="dol">
       <br>
-      <input type="submit" value="Submit">
+     <button onclick="test()">submit</button>
     </div>
 
-    <input type="submit" value="SUBMIT">
+    <!-- <input type="submit" value="SUBMIT"> -->
   </form>
 
 

@@ -48,7 +48,8 @@
   "dependencies": {
     "electron-json-storage": "^4.1.8",
     "electron-squirrel-startup": "^1.0.0",
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.2",
+    "pouchdb": "^7.1.1"
   },
   "devDependencies": {
     "@electron-forge/cli": "6.0.0-beta.47",
