@@ -11,6 +11,7 @@ if (require('electron-squirrel-startup')) { // eslint-disable-line global-requir
 let mainWindow;
 
 const createWindow = () => {
+  
   // Create the browser window.
   mainWindow = new BrowserWindow({
     width: 1200,
@@ -18,6 +19,8 @@ const createWindow = () => {
     titleBarStyle:'hidden',
     transparent: true,
     resizable:false,
+    // webPreferences: {webSecurity: false},
+    
   });
 
   // and load the index.html of the app.
