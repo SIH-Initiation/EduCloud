@@ -9,7 +9,8 @@
       <script>
         function test1(){
           var x=localStorage.getItem("schoolname");
-          document.getElementById("name").innerHTML=x;}
+          var y=JSON.parse(x);
+          document.getElementById("name").innerHTML=y;}
           </script>
 <script src="pouchdb.find.js"></script>
       <!-- <img src="bg.jpg" id="bg" alt="">
