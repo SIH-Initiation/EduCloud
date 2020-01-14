@@ -22,13 +22,13 @@
     <label for="dob">Date Of Birth:</label>
     <input type="date" id="dob" name="dob">
     <label for="gender"> Gender:</label>
-    <div class="genderradio">
-        <input id="maleradio" type="radio" name="gender" value="male"> Male
-        <input id="femaleradio" type="radio" name="gender" value="female"> Female
-        <input id="otherradio" type="radio" name="gender" value="other"> Other<br>
-    </div>
+    <select id="gender" name="gender">
+     <option value="Male">Male</option>
+     <option value="Female">Female</option>
+     <option value="Other">Other</option>
+   </select><br />
     <label for="contactnumber">Contact Number:</label>
-    <input type="number" id="contactnumber" name="contactnumber" placeholder="Enter Teacher's Contact Number">
+    <input type="text" id="contactnumber" name="contactnumber" placeholder="Enter Teacher's Contact Number">
     <label for="email">E-mail ID:</label><br>
     <input type="text" id="email" name="email" placeholder="Teacher's E-mail ID">
     <label for="education">Education:</label><br>

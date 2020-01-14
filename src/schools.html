@@ -9,12 +9,53 @@
 <script src="JS/findschool.js"></script>
 <script src="JS/schools.js"></script>
 <script src="pouchdb.find.js"></script>
-<h1>schools</h1>
+<a href="district.html" class="backbutton"> << </a>
+
+<style>
+body
+{
+  background-color: #c2104b;
+}
+.backbutton {
+           background-color: black;
+           border: none;
+           color: white;
+           padding: 0px 4px;
+           text-align: center;
+           text-decoration: none;
+           display: inline-block;
+           font-size: 20px;
+           margin: 4px 2px;
+           cursor: pointer;
+           width: 33px;
+           border-radius: 25%;
+
+           }
+
+          #header,#district,#table
+          {
+            text-align: center;
+          }
+
+          h1
+          {
+            font-size: 40px;
+          }
+          a
+          {
+            font-size: 25px;
+            color:black;
+            padding: 15px;
+            margin: 15px;
+          }
+
+
+</style>
+<h1 align="center">Schools</h1>
 <input type="number" id='sc' placeholder='schoolcode'>
-<button onclick='findschools()' id='but'>find</button>
-<div class='container' onload="test()">
+<button onclick='findschools()' id='but'>Find</button>
+<div align="center" class='container' onload="test()">
     <p id='json'></p>
 </div>
 </body>
 </html>
-
