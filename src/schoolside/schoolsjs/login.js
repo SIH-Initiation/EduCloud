@@ -6,9 +6,9 @@ function signup(){
     '_id':username,
     'password':password
   }
+  
   db.get(username).then(function (doc) {
-      if(username["password"]==password){
-        console.log("abcd");
+      if(doc["password"]==password){
         window.location.href='school_landing.html'
       }
   }).catch(function (err) {
@@ -61,5 +61,6 @@ function signup(){
       })
       .catch(function (error) {
         console.log(error);
+        
       });
     }
