@@ -10,10 +10,16 @@
 <script src="JS/schools.js"></script>
 <script src="pouchdb.find.js"></script>
 <h1>schools</h1>
-<input type="number" id='sc' placeholder='schoolcode'>
+<input type="text" id='sc' placeholder='schoolcode'>
 <button onclick='findschools()' id='but'>find</button>
+<br>
+<br>
 <div class='container' onload="test()">
-    <p id='json'></p>
+<table id="json">
+    <tr>
+        <td>name</td>
+        <td>code</td>
+</table>
 </div>
 </body>
 </html>
