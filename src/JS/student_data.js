@@ -38,10 +38,6 @@ var res = str1.concat(document.getElementById('admno').value);
     'dol':document.getElementById('dol').value
   
   }
-  
-  
-
-
         db.get(document.getElementById('admno').value).catch(function (err) {
           if (err.name === 'not_found') {
           console.log("res");
