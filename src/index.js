@@ -19,14 +19,13 @@ const createWindow = () => {
     titleBarStyle:'hidden',
     transparent: true,
     resizable:false,
-    // webPreferences: {webSecurity: false},
     
   });
 
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
-  // Open the DevTools.
+ 
   mainWindow.webContents.openDevTools();
 
   // Emitted when the window is closed.

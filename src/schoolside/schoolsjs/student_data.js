@@ -1,7 +1,7 @@
 const api= 'https://869a3a9a-8356-4ae9-8dbf-06e2f727e1ba-bluemix:76147209959e786263adc8636eb25e3e61edeb63e68d1b7aa0bd183690f2808f@869a3a9a-8356-4ae9-8dbf-06e2f727e1ba-bluemix.cloudantnosqldb.appdomain.cloud/';
 
 function test (){
-  var sync = PouchDB.sync("school1",api.concat(localStorage.getItem("schoolcode")), {
+  var sync = PouchDB.sync("s1001",api.concat('s1001'), {
         live: true,
         retry: true
       }).on('change', function (info) {
@@ -17,7 +17,7 @@ function test (){
       }).on('error', function (err) {
         // handle error
       });
-  var db = new PouchDB("school1");
+  var db = new PouchDB("s1001");
   
   
   var doc = {
@@ -38,11 +38,6 @@ function test (){
   
   }
   
-  // db.put(doc).then(function (response) {
-  //        prompt(response)
-  //       }).catch(function (err) {
-  //         console.log(err);
-  //       });   
 
 
         db.get(document.getElementById('admno').value).catch(function (err) {
