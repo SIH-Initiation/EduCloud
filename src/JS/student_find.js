@@ -20,22 +20,43 @@ function find(){
 
     db.find({selector:
         {
-            "class":localStorage.getItem("class")
-        }
+            "_id":localStorage.getItem("modifiedclass")
+        },
 
     }).then(function(result){
-        var ed=JSON.stringify(result);
+        var ed=JSON.stringify(result)
         var ed1=JSON.parse(ed);
+        var ed2=JSON.stringify(ed1["docs"]["0"]["students"].length)
+        var i=0;
+        for(i=0;i<ed1["docs"]["0"]["students"].length;i++){
+          var node = document.createElement("td")                 // Create a <li> node
+          var textnode = document.createTextNode(ed1["docs"]["0"]["students"][i]["name"]);         // Create a text node
+          node.appendChild(textnode);                              // Append the text to <li>
+          document.getElementById("json").appendChild(node);
+          var node = document.createElement("td")                 // Create a <li> node
+          var textnode = document.createTextNode("      ");         // Create a text node
+          node.appendChild(textnode);                              // Append the text to <li>
+          document.getElementById("json").appendChild(node);
+          var node = document.createElement("td")                 // Create a <li> node
+          var textnode = document.createTextNode(ed1["docs"]["0"]["students"][i]["code"]);         // Create a text node
+          node.appendChild(textnode);                              // Append the text to <li>
+          document.getElementById("json").appendChild(node);
+          var node = document.createElement("tr")                 // Create a <li> node
+          var textnode = document.createTextNode("");         // Create a text node
+          node.appendChild(textnode);                              // Append the text to <li>
+          document.getElementById("json").appendChild(node);
+        }
 
         //for(i=0;i<ed1["docs"].length;i++){
-        var ed2=JSON.stringify(ed1["docs"])
+        //var ed2=JSON.stringify(ed1["docs"])
         //document.getElementById("json").innerHTML=document.getElementById("json").innerHTML+'<br>'+ed2;}
         //e.insertAdjacentElement('afterbegin',<div><p>{{ed}}</p></div>);
-        localStorage.setItem("schoolname",ed2);
+        //localStorage.setItem("schoolname",ed2);
+        //document.getElementById("test").innerHTML=ed2;
 
     }).catch(function(err){
         document.getElementById("json").innerHTML=err
     });
-    window.location.href=''
+    //window.location.href=''
 
 }

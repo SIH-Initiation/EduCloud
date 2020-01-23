@@ -1,8 +1,5 @@
 const api= 'https://869a3a9a-8356-4ae9-8dbf-06e2f727e1ba-bluemix:76147209959e786263adc8636eb25e3e61edeb63e68d1b7aa0bd183690f2808f@869a3a9a-8356-4ae9-8dbf-06e2f727e1ba-bluemix.cloudantnosqldb.appdomain.cloud/';
-function findschools (){
-    var getinput=document.getElementById("sc").value;
-    //var d=JSON.stringify(getinput);
-    localStorage.setItem("schoolcode",getinput);
+function test(){
     var sync = PouchDB.sync(localStorage.getItem("schoolcode"),api.concat(localStorage.getItem("schoolcode")), {
       //live: true,
       retry: true
@@ -22,12 +19,26 @@ function findschools (){
     var db = new PouchDB(localStorage.getItem("schoolcode"));
     db.find({selector:
         {
-            "_id":"root:profile"
+            "_id":"root:class_list"
         },
 
     }).then(function(result){
         var ed=JSON.stringify(result);
         var ed1=JSON.parse(ed);
+        for(i=0;i<ed1["docs"]["0"]["class_list"].length;i++){
+            var node = document.createElement("td")                 // Create a <li> node
+            var textnode = document.createTextNode(ed1["docs"]["0"]["class_list"][i]);         // Create a text node
+            node.appendChild(textnode);                              // Append the text to <li>
+            document.getElementById("json").appendChild(node);
+            var node = document.createElement("tr")                 // Create a <li> node
+            var textnode = document.createTextNode("");         // Create a text node
+            node.appendChild(textnode);                              // Append the text to <li>
+            document.getElementById("json").appendChild(node);
+        }
+        //var ed2=JSON.stringify(ed1["docs"]["0"]["class_list"].length)
+        //var ed3=JSON.stringify(ed2["0"]["class_list"])
+        //document.getElementById("test").innerHTML=ed2;
+       /* var ed1=JSON.parse(ed);
         var ed2=JSON.stringify(ed1["docs"]["0"]["name"])
         localStorage.setItem("schoolname",ed2)
         localStorage.setItem("schoolcode",ed1["docs"]["0"]["schoolcode"])
@@ -45,11 +56,9 @@ function findschools (){
        // var ed2=JSON.stringify(ed1["docs"][0]["school"])
         //document.getElementById("json").innerHTML=document.getElementById("json").innerHTML+'<br>'+ed2;}
         //e.insertAdjacentElement('afterbegin',<div><p>{{ed}}</p></div>);
-        //localStorage.setItem("schoolname",ed2);
+        //localStorage.setItem("schoolname",ed2);*/
 
     }).catch(function(err){
         document.getElementById("json").innerHTML=err
     });
-    window.location.href='schoolprofile.html'
-
 }

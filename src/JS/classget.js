@@ -1,7 +1,9 @@
-const api= 'https://869a3a9a-8356-4ae9-8dbf-06e2f727e1ba-bluemix:76147209959e786263adc8636eb25e3e61edeb63e68d1b7aa0bd183690f2808f@869a3a9a-8356-4ae9-8dbf-06e2f727e1ba-bluemix.cloudantnosqldb.appdomain.cloud/';
-function call(key){
-    localStorage.setItem("class",key);
-    
-    window.location.href=''
+function call(){
+    var x=document.getElementById("class").value;
+    localStorage.setItem("class",x);
+    var x="studentList:";
+    var z=x.concat(localStorage.getItem("class"));
+    localStorage.setItem("modifiedclass",z);
+    window.location.href='studentlist.html'
 
 }

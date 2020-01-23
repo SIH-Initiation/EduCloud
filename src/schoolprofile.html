@@ -1,6 +1,6 @@
 <!DOCTYPE html>
   <head>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="">
   </head>
     <title>EduCloud</title>
     <meta name="description" content="">
@@ -8,9 +8,38 @@
   <body onload='test1()'>
       <script>
         function test1(){
-          var x=localStorage.getItem("schoolname");
-          var y=JSON.parse(x);
-          document.getElementById("name").innerHTML=y;}
+          var x1=localStorage.getItem("schoolname");
+          //var y1=JSON.parse(x1);
+         var x2=localStorage.getItem("schoolcode");
+          //var y2=JSON.parse(x2);
+          var x3=localStorage.getItem("district");
+          //var y3=JSON.parse(x3);
+          var x4=localStorage.getItem("subdistrict");
+          //var y4=JSON.parse(x4);
+          var x5=localStorage.getItem("address");
+          //var y5=JSON.parse(x5);
+          var x6=localStorage.getItem("phone");
+          //var y6=JSON.parse(x6);
+          var x7=localStorage.getItem("email");
+          //var y7=JSON.parse(x7);
+          var x8=localStorage.getItem("board");
+          //var y8=JSON.parse(x8);
+          var x9=localStorage.getItem("principal");
+          //var y9=JSON.parse(x9);
+          var x10=localStorage.getItem("teachercount");
+          //var y10=JSON.parse(x10);
+          document.getElementById("name").innerHTML=x1;
+          document.getElementById("schoolcode").innerHTML=x2;
+          document.getElementById("district").innerHTML=x3;
+          document.getElementById("subdistrict").innerHTML=x4;
+          document.getElementById("address").innerHTML=x5;
+          document.getElementById("phone").innerHTML=x6;
+          document.getElementById("email").innerHTML=x7;
+          document.getElementById("board").innerHTML=x8;
+          document.getElementById("principal").innerHTML=x9;
+          document.getElementById("teachercount").innerHTML=x10;
+
+        }
           </script>
 <script src="pouchdb.find.js"></script>
       <!-- <img src="bg.jpg" id="bg" >
@@ -23,40 +52,78 @@
 
       </div>
 
-      <div class="second">
-     
-      <ul>
-        <div class="second-stuff" >
-            <li id='name'></li>
-           
-        </div>
-      
-      </ul>
+      <!-- <div class="second"> -->
+     <p id="schoolcodee"></p>
+        <!-- <div class="second-stuff" > -->
+          <table>
+            <tr>
+              <td>NAME:-</td>
+              <td id="name"></td>
+            </tr>
+            <tr>
+              <td>SCHOOL CODE:-</td>
+              <td id="schoolcode"></td>
+            </tr>
+            <tr>
+              <td>DISTRICT:-</td>
+              <td id="district"></td>
+            </tr>
+            <tr>
+              <td>SUBDISTRICT:-</td>
+              <td id="subdistrict"></td>
+            </tr>
+            <tr>
+              <td>ADDRESS:-</td>
+              <td id="address"></td>
+            </tr>
+            <tr>
+              <td>PHONE:-</td>
+              <td id="phone"></td>
+            </tr>
+            <tr>
+              <td>EMAIL:-</td>
+              <td id="email"></td>
+            </tr>
+            <tr>
+              <td>BOARD:-</td>
+              <td id="board"></td>
+            </tr>
+            <tr>
+              <td>PRINCIPAL:-</td>
+              <td id="principal"></td>
+            </tr>
+            <tr>
+              <td>TEACHERCOUNT:-</td>
+              <td id="teachercount"></td>
+            </tr>
 
-      <br>
+
+        <!-- </div>
+
+      <br> -->
       <br>
       <br>
       <br>
     <div class="third">
       <h1 style="color: white;">Services</h1>
     </div>          
-  
+  <a href="teacherdivision.html">
     <div class="container">
       <div class="items">
         <div class="icon-wrapper">
           <i class="fa fa-file-text-o"></i>
         </div>
         <div class="project-name">
-          <p>For Admn</p>
+          <p>TEACHERS</p>
         </div>
       </div>
-      <a href="studentform.html">
+      <a href="class1.html">
       <div class="items">
         <div class="icon-wrapper">
           <i class="fa fa-th-large"></i>
         </div>
         <div class="project-name">
-          <p>For Schools</p>
+          <p>STUDENTS</p>
         </div>
       </div>  
     </a>
@@ -64,6 +131,7 @@
           
 
   </div>
+  <a href="classwiseattendace.html">CLASSWISE-ATTENDACE</a>
   <div class="last">
     <div class="last2">
       <p></p>
