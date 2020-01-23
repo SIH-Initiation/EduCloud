@@ -49,6 +49,7 @@ function findschools (){
 
     }).catch(function(err){
         document.getElementById("json").innerHTML=err
+        console.log("galat hua")
     });
     window.location.href='schoolprofile.html'
 
