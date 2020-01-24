@@ -1,6 +1,6 @@
 const api= 'https://869a3a9a-8356-4ae9-8dbf-06e2f727e1ba-bluemix:76147209959e786263adc8636eb25e3e61edeb63e68d1b7aa0bd183690f2808f@869a3a9a-8356-4ae9-8dbf-06e2f727e1ba-bluemix.cloudantnosqldb.appdomain.cloud/';
 //to fetch district
-function district(){
+async function district(){
     let l=[];
     let ed;
     let ed1;
@@ -70,20 +70,23 @@ function subdistrict(district){
        // handle error
      });
      var db = new PouchDB("sikkim");
-   db.find({selector:
+   result = db.find({selector:
     {
         "_id":district
     }
 
-}).then(function(result){
+})
+function kuch_bhi(result){
     ed=JSON.stringify(result);
     ed1=JSON.parse(ed);
-    ed2=JSON.stringify(ed1["docs"]["0"]["subdistricts"])
+    ed2=JSON.stringify(ed1["docs"]["0"]["subdistricts"]);
     subdistrict=ed2;
+    console.log(ed2);
     return ed2;
   
-}).catch(function(err){
-    return(err)
+})
+function(err){
+    return(err);
 })}
 
 // function find(){
