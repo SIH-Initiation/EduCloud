@@ -5,24 +5,20 @@ async function district(){
     let ed;
     let ed1;
     let ed2;
-    var sync = PouchDB.sync("sikkim",api.concat("sikkim"), {
-      // live: true,
-       retry: true
-     }).on('change', function (info) {
-       console.log("change chala");
-     }).on('paused', function (err) {
-       // replication paused (e.g. replication up to date, user went offline)
-     }).on('active', function () {
-       // replicate resumed (e.g. new changes replicating, user went back online)
-     }).on('denied', function (err) {
-       // a document failed to replicate (e.g. due to permissions)
-     }).on('complete', function (info) {
-      console.log("complete")
-     }).on('error', function (err) {
-       // handle error
-     });
-     var db = new PouchDB("sikkim");
-   db.find({selector:
+    var rep = PouchDB.replicate(api.concat("sikkim"),"sikkim", {
+  live: true,
+  retry: true
+}).on('change', function (info) {
+  // handle change
+}).on('paused', function (err) {
+  // replication paused (e.g. replication up to date, user went offline)
+}).on('active', function () {
+  // replicate resumed (e.g. new changes replicating, user went back online)
+}).on('denied', function (err) {
+  // a document failed to replicate (e.g. due to permissions)
+}).on('complete', function (info) {
+  var db = new PouchDB("sikkim");
+  db.find({selector:
     {
         "_id":{"$type":"string"}
     },"fields":["_id"]
@@ -39,7 +35,32 @@ async function district(){
 }).catch(function(err){
     return err;
 })
-return l;}
+return l;
+
+
+}).on('error', function (err) {
+  console.log(err;
+});
+//   var db = new PouchDB("sikkim");
+//   db.find({selector:
+//     {
+//         "_id":{"$type":"string"}
+//     },"fields":["_id"]
+
+// }).then(function(result){
+//     ed=JSON.stringify(result);
+//     ed1=JSON.parse(ed);
+//     ed2=JSON.stringify(ed1["docs"]);
+//     var i=0;
+//     for(i=0;i<ed1["docs"].length;i++){
+//         l.push(ed1["docs"][i]["_id"]);
+//     }
+  
+// }).catch(function(err){
+//     return err;
+// })
+// return l;
+}
 
 // function find(){
 //     var x=document.getElementById("district").value
@@ -70,23 +91,20 @@ function subdistrict(district){
        // handle error
      });
      var db = new PouchDB("sikkim");
-   result = await db.find({selector:
+   db.find({selector:
     {
         "_id":district
     }
 
-})
-function kuch_bhi(result){
+}).then(function(result){
     ed=JSON.stringify(result);
     ed1=JSON.parse(ed);
-    ed2=JSON.stringify(ed1["docs"]["0"]["subdistricts"]);
+    ed2=JSON.stringify(ed1["docs"]["0"]["subdistricts"])
     subdistrict=ed2;
-    console.log(ed2);
     return ed2;
   
-})
-function(err){
-    return(err);
+}).catch(function(err){
+    return(err)
 })}
 
 // function find(){
