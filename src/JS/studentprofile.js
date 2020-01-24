@@ -64,6 +64,7 @@ function call(){
     document.getElementById("address").innerHTML=ed121;
     document.getElementById("doj").innerHTML=ed131;
     document.getElementById("transport").innerHTML=ed141;
+    document.getElementById("test").innerHTML=JSON.stringify(ed1["docs"])
 
     //for(i=0;i<ed1["docs"].length;i++){
    // var ed2=JSON.stringify(ed1["docs"][0]["school"])

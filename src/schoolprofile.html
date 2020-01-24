@@ -6,41 +6,9 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <body onload='test1()'>
-      <script>
-        function test1(){
-          var x1=localStorage.getItem("schoolname");
-          //var y1=JSON.parse(x1);
-         var x2=localStorage.getItem("schoolcode");
-          //var y2=JSON.parse(x2);
-          var x3=localStorage.getItem("district");
-          //var y3=JSON.parse(x3);
-          var x4=localStorage.getItem("subdistrict");
-          //var y4=JSON.parse(x4);
-          var x5=localStorage.getItem("address");
-          //var y5=JSON.parse(x5);
-          var x6=localStorage.getItem("phone");
-          //var y6=JSON.parse(x6);
-          var x7=localStorage.getItem("email");
-          //var y7=JSON.parse(x7);
-          var x8=localStorage.getItem("board");
-          //var y8=JSON.parse(x8);
-          var x9=localStorage.getItem("principal");
-          //var y9=JSON.parse(x9);
-          var x10=localStorage.getItem("teachercount");
-          //var y10=JSON.parse(x10);
-          document.getElementById("name").innerHTML=x1;
-          document.getElementById("schoolcode").innerHTML=x2;
-          document.getElementById("district").innerHTML=x3;
-          document.getElementById("subdistrict").innerHTML=x4;
-          document.getElementById("address").innerHTML=x5;
-          document.getElementById("phone").innerHTML=x6;
-          document.getElementById("email").innerHTML=x7;
-          document.getElementById("board").innerHTML=x8;
-          document.getElementById("principal").innerHTML=x9;
-          document.getElementById("teachercount").innerHTML=x10;
+    <script src="pouchdb-7.1.1.js"></script>
 
-        }
-          </script>
+<script src="JS/schoolprofile.js"></script>
 <script src="pouchdb.find.js"></script>
       <!-- <img src="bg.jpg" id="bg" >
       <div class="topnav">
@@ -104,6 +72,7 @@
       <br>
       <br>
       <br>
+      <p id="test"></p>
     <div class="third">
       <h1 style="color: white;">Services</h1>
     </div>          
@@ -141,8 +110,7 @@
       <p>Made by jiit_push</p>
     </span>
   </div>
-  <script src="pouchdb-7.1.1.js"></script>
-
+ 
 
 </body>
 </html>

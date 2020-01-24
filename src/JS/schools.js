@@ -1,7 +1,6 @@
 //const api= 'https://869a3a9a-8356-4ae9-8dbf-06e2f727e1ba-bluemix:76147209959e786263adc8636eb25e3e61edeb63e68d1b7aa0bd183690f2808f@869a3a9a-8356-4ae9-8dbf-06e2f727e1ba-bluemix.cloudantnosqldb.appdomain.cloud/';
 function test (){
-  
-    var sync = PouchDB.sync("schools",api.concat("schools"), {
+  var sync = PouchDB.sync("schools",api.concat("schools"), {
         live: true,
       }).on('change', function (info) {
         console.log("change chala");
@@ -22,6 +21,7 @@ function test (){
         var ed1=JSON.parse(ed);
         var ed2=JSON.stringify(ed1["schools"])
         var ed3=JSON.parse(ed2)
+        document.getElementById("test").innerHTML=ed2;
       
         var i;
         for(i=0;i<ed3.length;i++){
@@ -54,7 +54,8 @@ function test (){
             node.appendChild(textnode);                              // Append the text to <li>
             document.getElementById("json").appendChild(node);
         }
-       "json").innerHTML+'<br>'+ed2;}
+        return ed2;
+
        
     }).catch(function(err){
         document.getElementById("json").innerHTML=err
@@ -62,4 +63,3 @@ function test (){
 }
 
 
-}

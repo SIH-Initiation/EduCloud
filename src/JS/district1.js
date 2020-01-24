@@ -33,6 +33,7 @@ function call(){
     }
     console.log(l);
     document.getElementById("test").innerHTML=l;
+    return l;
   
 }).catch(function(err){
     document.getElementById("test").innerHTML=err

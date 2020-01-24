@@ -26,7 +26,7 @@ function find(){
     }).then(function(result){
         var ed=JSON.stringify(result)
         var ed1=JSON.parse(ed);
-        var ed2=JSON.stringify(ed1["docs"]["0"]["students"].length)
+        var ed2=JSON.stringify(ed1["docs"]["0"]["students"])
         var i=0;
         for(i=0;i<ed1["docs"]["0"]["students"].length;i++){
           var node = document.createElement("td")                 // Create a <li> node
@@ -46,6 +46,8 @@ function find(){
           node.appendChild(textnode);                              // Append the text to <li>
           document.getElementById("json").appendChild(node);
         }
+        document.getElementById("test").innerHTML=ed2;
+        return ed2;
 
         //for(i=0;i<ed1["docs"].length;i++){
         //var ed2=JSON.stringify(ed1["docs"])

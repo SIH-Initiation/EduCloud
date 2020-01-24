@@ -25,7 +25,9 @@ function test(){
     }).then(function(result){
         var ed=JSON.stringify(result);
         var ed1=JSON.parse(ed);
+        var c=[]
         for(i=0;i<ed1["docs"]["0"]["class_list"].length;i++){
+          c.push(ed1["docs"]["0"]["class_list"][i]);
             var node = document.createElement("td")                 // Create a <li> node
             var textnode = document.createTextNode(ed1["docs"]["0"]["class_list"][i]);         // Create a text node
             node.appendChild(textnode);                              // Append the text to <li>
@@ -35,6 +37,8 @@ function test(){
             node.appendChild(textnode);                              // Append the text to <li>
             document.getElementById("json").appendChild(node);
         }
+        document.getElementById("test").innerHTML=c;
+        return c;
         //var ed2=JSON.stringify(ed1["docs"]["0"]["class_list"].length)
         //var ed3=JSON.stringify(ed2["0"]["class_list"])
         //document.getElementById("test").innerHTML=ed2;

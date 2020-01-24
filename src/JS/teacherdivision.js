@@ -1,6 +1,6 @@
 const api= 'https://869a3a9a-8356-4ae9-8dbf-06e2f727e1ba-bluemix:76147209959e786263adc8636eb25e3e61edeb63e68d1b7aa0bd183690f2808f@869a3a9a-8356-4ae9-8dbf-06e2f727e1ba-bluemix.cloudantnosqldb.appdomain.cloud/';
-function call(){
-    var sync = PouchDB.sync(localStorage.getItem("schoolcode"),api.concat(localStorage.getItem("schoolcode")), {
+function teacherdivision(schoolcode){
+    var sync = PouchDB.sync(schoolcode,api.concat(schoolcode), {
        live: true,
        retry: true
      }).on('change', function (info) {
@@ -16,18 +16,18 @@ function call(){
      }).on('error', function (err) {
        // handle error
      });
-     var db = new PouchDB(localStorage.getItem("schoolcode"));
+     var db = new PouchDB(schoolcode);
    db.find({selector:
     {
         "_id":"root:teacherDivision"
     }
 
 }).then(function(result){
-    ed=JSON.stringify(result);
-    ed1=JSON.parse(ed);
-    ed2=JSON.stringify(ed1["docs"]["0"]["divisions"])
-    document.getElementById("test").innerHTML=ed2;
+    let ed=JSON.stringify(result);
+    let ed1=JSON.parse(ed);
+    let ed2=JSON.stringify(ed1["docs"]["0"]["divisions"])
+    return ed2;
   
 }).catch(function(err){
-    document.getElementById("test").innerHTML=err
+    return ed2;
 })}
