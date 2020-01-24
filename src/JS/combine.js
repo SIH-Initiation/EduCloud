@@ -70,7 +70,7 @@ function subdistrict(district){
        // handle error
      });
      var db = new PouchDB("sikkim");
-   result = db.find({selector:
+   result = await db.find({selector:
     {
         "_id":district
     }
