@@ -3,7 +3,6 @@ function call(){
     var k=localStorage.getItem("name");
     var d=JSON.parse(k)
     document.getElementById("name").innerHTML=k;
-    document.getElementById("adm").innerHTML=localStorage.getItem("adminno");
     var sync = PouchDB.sync(localStorage.getItem("schoolcode"),api.concat(localStorage.getItem("schoolcode")), {
        live: true,
        retry: true
@@ -21,11 +20,15 @@ function call(){
        // handle error
      });
      var db = new PouchDB(localStorage.getItem("schoolcode"));
+     document.getElementById("adm").innerHTML=localStorage.getItem("schoolcode");
+     var x=localStorage.getItem("class1");
+     console.log(x);
    db.find({selector:
     {
         "date":{
             "$type":"string"
         },
+        "standard":x,
     "doc_type":"attendace"},
 
 }).then(function(result){
@@ -46,7 +49,7 @@ function call(){
             document.getElementById("json").appendChild(node);
     for(e in ed1["docs"]["0"]){
        
-        if(JSON.stringify(e)===JSON.stringify("date") || JSON.stringify(e)===JSON.stringify("doc_type") || JSON.stringify(e)===JSON.stringify("_id")|| JSON.stringify(e)===JSON.stringify("_rev")){
+        if(JSON.stringify(e)===JSON.stringify("date") || JSON.stringify(e)===JSON.stringify("doc_type") || JSON.stringify(e)===JSON.stringify("_id")|| JSON.stringify(e)===JSON.stringify("_rev") || JSON.stringify(e)===JSON.stringify(x)){
             continue;
         }
         else{
