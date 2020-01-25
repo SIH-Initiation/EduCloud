@@ -36,6 +36,7 @@ function call(){
     var ed1=JSON.parse(ed);
     var ed2=JSON.stringify(ed1["docs"].length)
     //document.getElementById("test").innerHTML=ed2;
+    console.log(ed)
     var adm=[]
     var i=0
     var e;

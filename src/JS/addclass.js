@@ -1,6 +1,9 @@
 const api= 'https://869a3a9a-8356-4ae9-8dbf-06e2f727e1ba-bluemix:76147209959e786263adc8636eb25e3e61edeb63e68d1b7aa0bd183690f2808f@869a3a9a-8356-4ae9-8dbf-06e2f727e1ba-bluemix.cloudantnosqldb.appdomain.cloud/';
-function call(){
-    var sync = PouchDB.sync("sikkim",api.concat("sikkim"), {
+function find(schoolcode,class1,section){
+    let ed;
+    let ed1;
+    let ed2;
+    var sync = PouchDB.sync(schoolcode,api.concat(schoolcode), {
        live: true,
        retry: true
      }).on('change', function (info) {
@@ -16,25 +19,20 @@ function call(){
      }).on('error', function (err) {
        // handle error
      });
-     var db = new PouchDB("sikkim");
-   db.find({selector:
-    {
-        "_id":{"$type":"string"}
-    },"fields":["_id"]
-
-}).then(function(result){
-    ed=JSON.stringify(result);
-    ed1=JSON.parse(ed);
-    ed2=JSON.stringify(ed1["docs"])
-    var i=0;
-    var l=[]
-    for(i=0;i<ed1["docs"].length;i++){
-        l.push(ed1["docs"][i]["_id"])
-    }
-    console.log(l);
-    document.getElementById("test").innerHTML=l;
-    return l;
-  
-}).catch(function(err){
-    document.getElementById("test").innerHTML=err
-})}
+     var db = new PouchDB(schoolcode);
+     console.log(schoolcode,class1,section)
+     var z=class1.concat(section);
+     console.log(z);
+     var s=[];
+     db.get("root:class_list1").then(function(doc) {
+         s=doc.class_list
+         s.push(z)
+        return db.put({
+            _id:"root:class_list1",
+          _rev: doc._rev,
+          class_list:s
+        });
+      }).then(function(response){
+      }).catch(function (err) {
+        console.log(err);
+      });}

@@ -31,9 +31,10 @@ function call(){
 }).then(function(result){
     var ed=JSON.stringify(result);
     var ed1=JSON.parse(ed);
-    var ed2=JSON.stringify(ed1["docs"].length)
+    var ed2=JSON.stringify(ed1["docs"])
     //document.getElementById("test").innerHTML=ed2;
     var i=0;
+    console.log(ed)
     var node=document.createElement("td")                 // Create a <li> node
             var textnode = document.createTextNode("DATE");         // Create a text node
             node.appendChild(textnode);                              // Append the text to <li>
