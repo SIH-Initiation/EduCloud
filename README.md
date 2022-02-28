@@ -1,6 +1,9 @@
 # EduCloud
 Ffront-electron
 
-handles electron background and frontwnd with vanila js
+Educloud Hackathon project, A suite of educational institute management softwares for remote areas with limited internet connectivity. 
+Electron 
+frontend - React
+backend - Node.JS & Django REST API
 
 
